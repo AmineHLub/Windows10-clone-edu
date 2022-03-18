@@ -1,10 +1,11 @@
 import './App.css';
+import Taskbar from './components/Taskbar';
 
 function App() {
   return (
-    <div className="App">
-      <h1>hey</h1>
-    </div>
+    <main>
+      <Taskbar />
+    </main>
   );
 }
 

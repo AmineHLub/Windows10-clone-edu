@@ -1,0 +1,60 @@
+.Taskbar {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  opacity: 0.8;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 1px;
+}
+
+.start-menu-btn {
+  grid-area: 1 / 1 / 2 / 2;
+  background: inherit;
+  background-image: url('../assets/win-logo-s.png');
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: 50% 2.5px;
+}
+
+.start-menu-btn:hover {
+  filter: contrast(80%);
+}
+
+.fast-and-running {
+  grid-area: 1 / 2 / 2 / 14;
+}
+
+.time-settings {
+  grid-area: 1 / 14 / 2 / 16;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.time-settings > img {
+  height: 17px;
+}
+
+.time-date-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-date-container > p {
+  margin: 0;
+  color: white;
+}
+
+.time-settings > img:hover {
+  filter: contrast(40%);
+  background: inherit;
+  cursor: pointer;
+}
