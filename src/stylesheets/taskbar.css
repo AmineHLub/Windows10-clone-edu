@@ -1,6 +1,6 @@
 .Taskbar {
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -10,7 +10,6 @@
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 1px;
 }
 
 .start-menu-btn {
@@ -28,6 +27,7 @@
 
 .fast-and-running {
   grid-area: 1 / 2 / 2 / 14;
+  background: inherit;
 }
 
 .time-settings {
@@ -57,4 +57,27 @@
   filter: contrast(40%);
   background: inherit;
   cursor: pointer;
+}
+
+/* Taskmenu */
+
+.fixed-task-menu {
+  position: fixed;
+  z-index: -1;
+  bottom: -100%;
+  left: 0;
+  width: 28%;
+  height: 80%;
+  background-color: black;
+  opacity: 0.9;
+}
+
+.show-task {
+  transform: translateY(-120%);
+  transition: 0.25s;
+}
+
+.close-task {
+  transform: translateY(120%);
+  transition: 0.25s;
 }
