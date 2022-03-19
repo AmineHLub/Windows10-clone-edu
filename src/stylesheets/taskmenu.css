@@ -1,0 +1,74 @@
+.fixed-task-menu {
+  position: fixed;
+  z-index: -1;
+  bottom: -98%;
+  left: 5px;
+  border-radius: 10px;
+  width: 45%;
+  height: 85%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+}
+
+.show-task {
+  transform: translateY(-125%);
+  transition: 0.25s;
+}
+
+.close-task {
+  transform: translateY(125%);
+  transition: 0.25s;
+}
+
+.taskbar-menu-setting {
+  height: 100%;
+  width: 7%;
+}
+
+.taskbar-menu-apps {
+  height: 100%;
+  width: 38%;
+}
+
+.taskbar-menu-feeds {
+  height: 100%;
+  width: 55%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center center;
+}
+
+.taskbar-menu-feeds > div {
+  position: relative;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.taskbar-menu-feeds > div:hover {
+  border: 2px solid rgb(214, 214, 214);
+}
+
+.taskbar-menu-feeds > div > p {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(39, 39, 39);
+  margin: auto;
+  background-color: white;
+  font-weight: bolder;
+}
+
+.taskbar-menu-feeds > div > img {
+  border-radius: 5px;
+  height: 150px;
+  width: 100%;
+}

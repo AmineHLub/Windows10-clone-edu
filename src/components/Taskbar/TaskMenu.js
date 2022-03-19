@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import '../../stylesheets/taskmenu.css';
 
 export default function TaskMenu({ taskState, feedResponse }) {
   return (
