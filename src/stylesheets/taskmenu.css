@@ -22,7 +22,16 @@
 
 .taskbar-menu-setting {
   height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
   width: 7%;
+}
+
+.taskbar-menu-setting > img {
+  margin-bottom: 15px;
+  background: inherit;
+  cursor: pointer;
 }
 
 .taskbar-menu-apps {
@@ -71,4 +80,8 @@
   border-radius: 5px;
   height: 150px;
   width: 100%;
+}
+
+.taskbar-menu-setting > img:hover {
+  filter: contrast(40%);
 }

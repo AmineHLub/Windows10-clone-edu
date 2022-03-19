@@ -15,7 +15,6 @@ export default function Taskbar() {
     + 'apiKey=437d3b8f9c484293997c0c9027a39e23';
     const feedData = await axios.get(baseUrl);
     setFeedResponse(feedData.data.articles.slice(0, 6));
-    console.log(feedResponse);
   }, []);
   return (
     <>
