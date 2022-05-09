@@ -4,7 +4,7 @@ import '../stylesheets/desktop.css';
 import AppWindow from './Desktop/AppWindow';
 
 export default function Desktop() {
-  const openApps = [1, 2, 3];
+  const openApps = [1];
   return (
     <div className="desktop-wrapper">
       {
