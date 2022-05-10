@@ -2,6 +2,8 @@
   position: relative;
   height: calc(100% - 45px);
   width: 100%;
+  align-content: flex-start;
+  flex-flow: column wrap;
 }
 
 .popupup {
@@ -11,4 +13,25 @@
   width: 100%;
   height: 100%;
   z-index: 5643;
+}
+
+.shortcut-container {
+  box-sizing: border-box;
+  text-align: center;
+  width: 10%;
+  margin: 1% 2px;
+}
+
+.selected-dsk-app,
+.shortcut-container:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.shortcut-container > img {
+  width: 60px;
+}
+
+.shortcut-container > p {
+  margin: 5px 0;
 }

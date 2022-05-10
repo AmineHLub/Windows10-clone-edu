@@ -28,7 +28,9 @@
 }
 
 .window-container-upper-control-left > h2 {
-  margin: 0 20px;
+  margin: 0 5px;
+  color: white;
+  font-weight: normal;
 }
 
 .window-container-upper-control-right > img {
