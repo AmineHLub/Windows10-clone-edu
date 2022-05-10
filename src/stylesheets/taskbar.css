@@ -21,11 +21,8 @@
   background-position: 50% 2.5px;
 }
 
-.start-menu-btn:hover {
-  filter: contrast(80%);
-}
-
 .fast-and-running {
+  align-items: center;
   grid-area: 1 / 2 / 2 / 14;
   background: inherit;
 }
@@ -53,8 +50,48 @@
   color: white;
 }
 
+.fast-and-running-app {
+  position: relative;
+  margin: 0 10px;
+}
+
+.fast-and-running-app > img {
+  height: 35px;
+  margin: auto;
+}
+
+.custom-context-task {
+  position: absolute;
+  top: -55px;
+  left: 0;
+  height: 45px;
+  width: 80px;
+  border-radius: 8px;
+  background: rgb(0 36 50);
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-context-task > button {
+  background-color: inherit;
+  padding: 4px 15px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.custom-context-task > button:hover {
+  color: rgb(0 36 50);
+  background-color: white;
+}
+
 .time-settings > img:hover {
   filter: contrast(40%);
   background: inherit;
   cursor: pointer;
+}
+
+.start-menu-btn:hover {
+  filter: contrast(80%);
 }

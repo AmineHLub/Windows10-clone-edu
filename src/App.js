@@ -36,6 +36,8 @@ function App() {
         feedResponse={feedResponse}
         taskState={taskState}
         settaskState={settaskState}
+        openedApps={openedApps}
+        appKiller={appKiller}
       />
     </main>
   );

@@ -18,7 +18,7 @@
 .shortcut-container {
   box-sizing: border-box;
   text-align: center;
-  width: 10%;
+  width: 8%;
   margin: 1% 2px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .shortcut-container > img {
-  width: 60px;
+  width: 50px;
 }
 
 .shortcut-container > p {

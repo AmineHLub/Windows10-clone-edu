@@ -40,6 +40,7 @@ export default function Edge() {
             placeholder="Search or enter address"
             onChange={(e) => setLink(e.target.value)}
             onKeyPress={(e) => loadPage(e)}
+            value={link}
           />
         </div>
       </section>
