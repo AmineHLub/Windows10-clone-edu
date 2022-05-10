@@ -5,7 +5,9 @@ import '../stylesheets/desktop.css';
 import AppWindow from './Desktop/AppWindow';
 import shortCuts from './Desktop/ShortCuts/ShortCuts';
 
-export default function Desktop({ settaskState, openedApps, setOpenedApps }) {
+export default function Desktop({
+  settaskState, openedApps, setOpenedApps, appKiller,
+}) {
   const [clickedApp, setClickedApp] = useState('');
 
   const applauncher = (app) => {
@@ -50,7 +52,7 @@ export default function Desktop({ settaskState, openedApps, setOpenedApps }) {
       <app>
         {
         openedApps.map((app) => (
-          <AppWindow key={app.id} app={app} />
+          <AppWindow key={app.id} app={app} appKiller={appKiller} />
         ))
       }
       </app>

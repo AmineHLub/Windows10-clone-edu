@@ -4,7 +4,7 @@ import closeapp from '../../assets/window/closeapp.png';
 import max from '../../assets/window/max.png';
 import slide from '../../assets/window/slide.png';
 
-export default function WindowControle({ app }) {
+export default function WindowControle({ app, appKiller }) {
   return (
     <div className="window-container-upper-control d-flex">
       <div className="window-container-upper-control-left">
@@ -13,7 +13,7 @@ export default function WindowControle({ app }) {
       <div className="window-container-upper-control-right">
         <img src={slide} alt="slide" />
         <img src={max} alt="max" />
-        <img src={closeapp} alt="closeapp" />
+        <img src={closeapp} alt="closeapp" aria-hidden="true" onClick={() => appKiller(app)} />
       </div>
     </div>
   );

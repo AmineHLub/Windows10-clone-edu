@@ -8,7 +8,7 @@ import Paint from './Apps/Paint';
 import Spotify from './Apps/Spotify';
 import NotePad from './Apps/NotePad';
 
-export default function AppWindow({ app }) {
+export default function AppWindow({ app, appKiller }) {
   const appSelector = (app) => {
     switch (app.name) {
       case 'Edge': return <Edge />;
@@ -22,7 +22,7 @@ export default function AppWindow({ app }) {
 
   return (
     <div id={app.id} className="window-container-frame">
-      <WindowControle app={app} />
+      <WindowControle app={app} appKiller={appKiller} />
       <div className="application-container">
         {appSelector(app)}
       </div>

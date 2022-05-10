@@ -18,10 +18,25 @@ function App() {
 
   const [taskState, settaskState] = useState(false);
   const [openedApps, setOpenedApps] = useState([]);
+
+  const appKiller = (app) => {
+    const newOpenedApps = openedApps.filter((openedApp) => openedApp.id !== app.id);
+    setOpenedApps(newOpenedApps);
+  };
+
   return (
     <main>
-      <Desktop settaskState={settaskState} openedApps={openedApps} setOpenedApps={setOpenedApps} />
-      <Taskbar feedResponse={feedResponse} taskState={taskState} settaskState={settaskState} />
+      <Desktop
+        settaskState={settaskState}
+        openedApps={openedApps}
+        setOpenedApps={setOpenedApps}
+        appKiller={appKiller}
+      />
+      <Taskbar
+        feedResponse={feedResponse}
+        taskState={taskState}
+        settaskState={settaskState}
+      />
     </main>
   );
 }
