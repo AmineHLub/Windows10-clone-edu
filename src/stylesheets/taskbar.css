@@ -95,3 +95,14 @@
 .start-menu-btn:hover {
   filter: contrast(80%);
 }
+
+.taskbar-wrapper {
+  position: relative;
+}
+
+.taskbar-leftclick {
+  flex-direction: column;
+  width: 100px;
+  height: 65px;
+  top: -75px;
+}

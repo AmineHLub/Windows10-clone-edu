@@ -13,3 +13,29 @@ main {
 .d-flex {
   display: flex;
 }
+
+.ontop {
+  z-index: 50;
+  border-color: rgb(0 36 50) !important;
+}
+
+.ontop > .window-container-upper-control {
+  background-color: rgb(0 36 50) !important;
+}
+
+.minimized {
+  display: none !important;
+}
+
+.maxsized-app {
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.running-selected {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.432);
+}

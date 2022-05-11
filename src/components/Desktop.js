@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import '../stylesheets/desktop.css';
 import AppWindow from './Desktop/AppWindow';
 import shortCuts from './Desktop/ShortCuts/ShortCuts';
+import appReorganizer from './Tools/appReorganizer';
 
 export default function Desktop({
   settaskState, openedApps, setOpenedApps, appKiller,
@@ -18,6 +19,7 @@ export default function Desktop({
       id: Math.floor(Math.random() * 10) + 1,
     };
     setOpenedApps([...openedApps, appObject]);
+    setTimeout(() => appReorganizer(appObject), 20);
   };
 
   const dekstopClicking = () => {

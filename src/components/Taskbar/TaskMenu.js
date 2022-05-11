@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import '../../stylesheets/taskmenu.css';
@@ -13,8 +14,8 @@ export default function TaskMenu({ taskState, feedResponse }) {
       </section>
       <section className="taskbar-menu-apps" />
       <section className="taskbar-menu-feeds">
-        {feedResponse ? feedResponse.map((feed) => (
-          <div key={1} className="feed-container">
+        {feedResponse ? feedResponse.map((feed, index) => (
+          <div key={index} className="feed-container">
             <p className="feed-header">{feed.title}</p>
             <img src={feed.urlToImage} alt="feed-img" />
           </div>
