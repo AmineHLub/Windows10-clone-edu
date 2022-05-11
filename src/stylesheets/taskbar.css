@@ -104,5 +104,6 @@
   flex-direction: column;
   width: 100px;
   height: 65px;
+  z-index: 60;
   top: -75px;
 }

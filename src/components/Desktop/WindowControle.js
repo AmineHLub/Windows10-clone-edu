@@ -14,10 +14,14 @@ export default function WindowControle({
   const startDragging = (e) => {
     setDraggableDiv(true);
     const previousPos = {
-      x: e.clientX - e.currentTarget.getBoundingClientRect().left,
+      x: e.clientX - e.currentTarget.getBoundingClientRect().left + 90,
       y: e.clientY - e.currentTarget.getBoundingClientRect().top,
     };
     setMovementDiff(previousPos);
+  };
+
+  const stopDragging = () => {
+    setDraggableDiv(false);
   };
 
   const dragging = (e) => {
@@ -28,25 +32,29 @@ export default function WindowControle({
         top: `${top}px`,
         left: `${left}px`,
       };
+      if (top <= 0) {
+        setWindowState(true);
+        stopDragging();
+      } else {
+        setWindowState(false);
+      }
       setPosition(NewDivPosition);
     }
   };
 
-  const stopDragging = () => {
-    setDraggableDiv(false);
-  };
   return (
-    <div
-      aria-hidden="true"
-      onMouseDown={(e) => startDragging(e)}
-      onMouseMove={(e) => dragging(e)}
-      onMouseUp={() => stopDragging()}
-      onDoubleClick={() => setWindowState(!windowState)}
-      className="window-container-upper-control d-flex"
-    >
+    <div className="window-container-upper-control d-flex">
       <div className="window-container-upper-control-left">
-        <h2>{app.name}</h2>
+        <p>{app.name}</p>
       </div>
+      <div
+        className="window-container-upper-control-middle"
+        aria-hidden="true"
+        onMouseDown={(e) => startDragging(e)}
+        onMouseMove={(e) => dragging(e)}
+        onMouseUp={() => stopDragging()}
+        onDoubleClick={() => setWindowState(!windowState)}
+      />
       <div className="window-container-upper-control-right">
         <img src={slide} alt="slide" aria-hidden="true" onClick={() => appMinimizer(app)} />
         <img src={max} aria-hidden="true" onClick={() => setWindowState(!windowState)} alt="max" />

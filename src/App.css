@@ -10,6 +10,11 @@ main {
   background-size: 100% 100%;
 }
 
+body {
+  user-select: none;
+  font-family: 'Arial', sans-serif;
+}
+
 .d-flex {
   display: flex;
 }

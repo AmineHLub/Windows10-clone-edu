@@ -21,16 +21,25 @@
   height: 45px;
 }
 
+.window-container-upper-control-middle {
+  height: 100%;
+  width: 100%;
+}
+
+.window-container-upper-control-left {
+  width: 90px;
+}
+
+.window-container-upper-control-left > p {
+  font-size: 1.2rem;
+  margin: 0 5px;
+  color: white;
+}
+
 .window-container-upper-control-right {
   display: flex;
   align-items: center;
   height: 100%;
-}
-
-.window-container-upper-control-left > h2 {
-  margin: 0 5px;
-  color: white;
-  font-weight: normal;
 }
 
 .window-container-upper-control-right > img {
