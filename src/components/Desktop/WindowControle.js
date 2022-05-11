@@ -9,7 +9,7 @@ export default function WindowControle({
   app, appKiller, windowState, setWindowState,
 }) {
   return (
-    <div className="window-container-upper-control d-flex">
+    <div onDoubleClick={() => setWindowState(!windowState)} className="window-container-upper-control d-flex">
       <div className="window-container-upper-control-left">
         <h2>{app.name}</h2>
       </div>
