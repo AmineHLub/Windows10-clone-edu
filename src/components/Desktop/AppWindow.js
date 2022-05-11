@@ -11,13 +11,18 @@ import appReorganizer from '../Tools/appReorganizer';
 
 export default function AppWindow({ app, appKiller }) {
   const [windowState, setWindowState] = useState(false);
+  const [position, setPosition] = useState({
+    top: '20px',
+    left: '200px',
+  });
+
   const appSelector = (app) => {
     switch (app.name) {
       case 'Edge': return <Edge />;
       case 'Paint': return <Paint />;
       case 'Notepad': return <NotePad />;
       case 'Spotify': return <Spotify />;
-      default: <Paint />;
+      default: <></>;
     }
     return (<></>);
   };
@@ -28,12 +33,14 @@ export default function AppWindow({ app, appKiller }) {
       aria-hidden="true"
       onClick={() => appReorganizer(app)}
       className={windowState ? 'window-container-frame maxsized-app' : 'window-container-frame'}
+      style={position}
     >
       <WindowControle
         app={app}
         appKiller={appKiller}
         windowState={windowState}
         setWindowState={setWindowState}
+        setPosition={setPosition}
       />
       <div className="application-container">
         {appSelector(app)}
