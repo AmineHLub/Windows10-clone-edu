@@ -18,7 +18,7 @@
 .shortcut-container {
   box-sizing: border-box;
   text-align: center;
-  width: 8%;
+  width: 95px;
   margin: 1% 2px;
 }
 
@@ -34,4 +34,5 @@
 
 .shortcut-container > p {
   margin: 5px 0;
+  color: rgba(255, 255, 255, 0.89);
 }

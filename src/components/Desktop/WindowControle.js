@@ -14,7 +14,7 @@ export default function WindowControle({
   const startDragging = (e) => {
     setDraggableDiv(true);
     const previousPos = {
-      x: e.clientX - e.currentTarget.getBoundingClientRect().left + 90,
+      x: e.clientX - e.currentTarget.getBoundingClientRect().left + 130,
       y: e.clientY - e.currentTarget.getBoundingClientRect().top,
     };
     setMovementDiff(previousPos);
@@ -44,8 +44,9 @@ export default function WindowControle({
 
   return (
     <div className="window-container-upper-control d-flex">
-      <div className="window-container-upper-control-left">
-        <p>{app.name}</p>
+      <div className="window-container-upper-control-left d-flex">
+        <img src={app.icon} alt={app.name} />
+        <p>{app.name === 'Command' ? 'C:\\Windows\\system32\\cmd.exe' : app.name}</p>
       </div>
       <div
         className="window-container-upper-control-middle"

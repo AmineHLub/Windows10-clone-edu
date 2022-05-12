@@ -7,6 +7,10 @@ import Edge from './Apps/Edge';
 import Paint from './Apps/Paint';
 import Spotify from './Apps/Spotify';
 import NotePad from './Apps/NotePad';
+import Calculator from './Apps/Calculator';
+import Cmd from './Apps/Cmd';
+import Freecell from './Apps/Freecell';
+import Minesweeper from './Apps/Minesweeper';
 import appReorganizer from '../Tools/appReorganizer';
 
 export default function AppWindow({ app, appKiller }) {
@@ -22,6 +26,10 @@ export default function AppWindow({ app, appKiller }) {
       case 'Paint': return <Paint />;
       case 'Notepad': return <NotePad />;
       case 'Spotify': return <Spotify />;
+      case 'Calculator': return <Calculator />;
+      case 'Command': return <Cmd />;
+      case 'Freecell': return <Freecell />;
+      case 'Minesweeper': return <Minesweeper />;
       default: <></>;
     }
     return (<></>);

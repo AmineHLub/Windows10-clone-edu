@@ -19,6 +19,26 @@ const shortCuts = [
     icon: 'https://i.ibb.co/bPMhqx1/spotify-ico.png',
     index: 4,
   },
+  {
+    name: 'Calculator',
+    icon: 'https://i.ibb.co/sbLcWmB/calculator-ico.png',
+    index: 5,
+  },
+  {
+    name: 'Command',
+    icon: 'https://i.ibb.co/q14FMpW/cmd.png',
+    index: 6,
+  },
+  {
+    name: 'Freecell',
+    icon: 'https://i.ibb.co/sHg7g79/freecell-ico.png',
+    index: 7,
+  },
+  {
+    name: 'Minesweeper',
+    icon: 'https://i.ibb.co/C2JV9Rq/minesweeper.png',
+    index: 8,
+  },
 ];
 
 export default shortCuts;

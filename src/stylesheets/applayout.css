@@ -27,7 +27,14 @@
 }
 
 .window-container-upper-control-left {
-  width: 90px;
+  width: 130px;
+  align-items: center;
+}
+
+.window-container-upper-control-left > img {
+  width: 23px;
+  height: 23px;
+  margin: 0 4px;
 }
 
 .window-container-upper-control-left > p {
