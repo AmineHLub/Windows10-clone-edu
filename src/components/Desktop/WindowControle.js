@@ -14,7 +14,7 @@ export default function WindowControle({
   const startDragging = (e) => {
     setDraggableDiv(true);
     const previousPos = {
-      x: e.clientX - e.currentTarget.getBoundingClientRect().left + 130,
+      x: e.clientX - e.currentTarget.getBoundingClientRect().left + 100,
       y: e.clientY - e.currentTarget.getBoundingClientRect().top,
     };
     setMovementDiff(previousPos);
