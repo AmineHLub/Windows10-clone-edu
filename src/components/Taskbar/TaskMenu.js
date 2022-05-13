@@ -29,7 +29,7 @@ export default function TaskMenu({
       <section className="taskbar-menu-feeds">
         {feedResponse ? feedResponse.map((feed, index) => (
           <div key={index} className="feed-container">
-            <p className="feed-header">{feed.title}</p>
+            <p className="feed-header">{feed.title.substring(0, 50)}</p>
             <img src={feed.urlToImage} alt="feed-img" />
           </div>
         )) : null}
