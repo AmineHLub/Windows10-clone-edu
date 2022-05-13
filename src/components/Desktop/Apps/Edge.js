@@ -18,8 +18,8 @@ export default function Edge() {
     if (e.key === 'Enter') {
       setIsHome(false);
       if (!link.includes('http')) {
-        setLink(`http://${link}`);
-        setpageLink(`http://${link}`);
+        setLink(`https://${link}`);
+        setpageLink(`https://${link}`);
       } else setpageLink(link);
     }
   };

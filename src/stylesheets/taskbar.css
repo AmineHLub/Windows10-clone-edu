@@ -85,7 +85,8 @@
 
 .time-date-container > p {
   margin: 0;
-  color: white;
+  color: rgba(255, 255, 255, 0.945);
+  font-family: 'Times new roman', sans-serif;
 }
 
 .time-settings > img:hover {
