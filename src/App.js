@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Taskbar from './components/Taskbar';
 import Desktop from './components/Desktop';
+import appReorganizer from './components/Tools/appReorganizer';
 
 function App() {
   const [feedResponse, setFeedResponse] = useState();
@@ -18,10 +19,23 @@ function App() {
 
   const [taskState, settaskState] = useState(false);
   const [openedApps, setOpenedApps] = useState([]);
+  const [clickedApp, setClickedApp] = useState('');
 
   const appKiller = (app) => {
     const newOpenedApps = openedApps.filter((openedApp) => openedApp.id !== app.id);
     setOpenedApps(newOpenedApps);
+  };
+
+  const applauncher = (app) => {
+    setClickedApp('');
+    settaskState(false);
+    const appObject = {
+      name: app.name,
+      icon: app.icon,
+      id: Math.floor(Math.random() * 10) + 1,
+    };
+    setOpenedApps([...openedApps, appObject]);
+    setTimeout(() => appReorganizer(appObject), 20);
   };
 
   return (
@@ -29,15 +43,19 @@ function App() {
       <Desktop
         settaskState={settaskState}
         openedApps={openedApps}
-        setOpenedApps={setOpenedApps}
         appKiller={appKiller}
+        applauncher={applauncher}
+        clickedApp={clickedApp}
+        setClickedApp={setClickedApp}
       />
       <Taskbar
         feedResponse={feedResponse}
         taskState={taskState}
         settaskState={settaskState}
         openedApps={openedApps}
+        setOpenedApps={setOpenedApps}
         appKiller={appKiller}
+        applauncher={applauncher}
       />
     </main>
   );

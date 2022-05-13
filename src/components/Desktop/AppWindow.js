@@ -11,9 +11,12 @@ import Calculator from './Apps/Calculator';
 import Cmd from './Apps/Cmd';
 import Freecell from './Apps/Freecell';
 import Minesweeper from './Apps/Minesweeper';
+import Spider from './Apps/Spider';
+import Taskmgr from './Apps/Taskmgr';
+import Settings from './Apps/Settings';
 import appReorganizer from '../Tools/appReorganizer';
 
-export default function AppWindow({ app, appKiller }) {
+export default function AppWindow({ app, appKiller, openedApps }) {
   const [windowState, setWindowState] = useState(false);
   const [position, setPosition] = useState({
     top: '20px',
@@ -30,6 +33,9 @@ export default function AppWindow({ app, appKiller }) {
       case 'Command': return <Cmd />;
       case 'Freecell': return <Freecell />;
       case 'Minesweeper': return <Minesweeper />;
+      case 'Spider': return <Spider />;
+      case 'Manager': return <Taskmgr appKiller={appKiller} openedApps={openedApps} />;
+      case 'Settings': return <Settings />;
       default: <></>;
     }
     return (<></>);

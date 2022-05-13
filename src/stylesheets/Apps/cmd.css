@@ -1,0 +1,30 @@
+.prompt-app-wrapper {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.prompt-app-wrapper > p {
+  margin: 0;
+}
+
+.command-input-container {
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.command-input {
+  box-sizing: border-box;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  background-color: inherit;
+  outline: none;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  text-indent: 205px;
+  resize: none;
+}

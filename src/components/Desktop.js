@@ -3,30 +3,38 @@
 import React, { useState } from 'react';
 import '../stylesheets/desktop.css';
 import AppWindow from './Desktop/AppWindow';
+import Aboutme from './Desktop/Apps/Aboutme';
 import shortCuts from './Desktop/ShortCuts/ShortCuts';
-import appReorganizer from './Tools/appReorganizer';
 
 export default function Desktop({
-  settaskState, openedApps, setOpenedApps, appKiller,
+  settaskState, openedApps, appKiller, clickedApp, setClickedApp, applauncher,
 }) {
-  const [clickedApp, setClickedApp] = useState('');
+  const [desktopLeftClick, setDesktopLeftClick] = useState({
+    state: false,
+    position: {},
+  });
 
-  const applauncher = (app) => {
-    setClickedApp('');
-    const appObject = {
-      name: app.name,
-      icon: app.icon,
-      id: Math.floor(Math.random() * 10) + 1,
-    };
-    setOpenedApps([...openedApps, appObject]);
-    setTimeout(() => appReorganizer(appObject), 20);
-  };
+  const [aboutMePopup, setAboutMePopup] = useState(false);
 
   const dekstopClicking = () => {
     settaskState(false);
     if (clickedApp !== '') {
       setClickedApp('');
     }
+    setDesktopLeftClick({ state: false, position: {} });
+  };
+
+  const desktopLeftClickFn = (e) => {
+    e.preventDefault();
+    document.querySelector('.taskbar-wrapper').addEventListener('click', () => setDesktopLeftClick({ state: false, position: {} }));
+    setDesktopLeftClick((prevState) => ({
+      state: true,
+      position: {
+        top: e.clientY,
+        left: e.clientX,
+      },
+    }
+    ));
   };
 
   const oneClickOnApp = (app) => {
@@ -37,13 +45,29 @@ export default function Desktop({
     <div
       className="desktop-wrapper d-flex"
       onClick={() => dekstopClicking()}
+      onContextMenu={(e) => { desktopLeftClickFn(e); }}
       aria-hidden="true"
     >
-      {shortCuts.map((shortCut) => (
+      {desktopLeftClick.state ? (
+        <div className="desktop-leftclick-popup custom-context-task d-flex" style={desktopLeftClick.position}>
+          <div onClick={() => alert('nothing to personalize yet')} aria-hidden className="desktop-leftclick-popup-content d-flex personalize">
+            <img src="https://i.ibb.co/hKKGgz4/personalize.png" alt="" />
+            <p>Personalize</p>
+          </div>
+          <div aria-hidden onClick={() => setAboutMePopup(true)} className="desktop-leftclick-popup-content d-flex personalize">
+            <img src="https://i.ibb.co/wNK4Q3c/aboutme-ico.png" alt="" />
+            <p>About me</p>
+          </div>
+        </div>
+      )
+        : null}
+      {aboutMePopup ? <Aboutme setAboutMePopup={setAboutMePopup} /> : null}
+      {shortCuts.filter((shortcut) => shortcut.desktop).map((shortCut) => (
         <div
           className={clickedApp === shortCut.name ? 'shortcut-container selected-dsk-app' : 'shortcut-container'}
           aria-hidden="true"
           onClick={() => oneClickOnApp(shortCut.name)}
+          onContextMenu={(e) => { e.stopPropagation(); e.preventDefault(); }}
           onDoubleClick={() => applauncher(shortCut)}
           key={shortCut.index}
         >
@@ -54,7 +78,12 @@ export default function Desktop({
       <app>
         {
         openedApps.map((app) => (
-          <AppWindow key={app.id} app={app} appKiller={appKiller} />
+          <AppWindow
+            key={app.id}
+            app={app}
+            appKiller={appKiller}
+            openedApps={openedApps}
+          />
         ))
       }
       </app>

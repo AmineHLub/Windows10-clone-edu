@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import '../../../stylesheets/Apps/cmd.css';
 
 export default function Cmd() {
   return (
