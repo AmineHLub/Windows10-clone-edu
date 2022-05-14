@@ -1,0 +1,78 @@
+.desktop-wrapper {
+  position: relative;
+  height: calc(100% - 45px);
+  width: 100%;
+  align-content: flex-start;
+  flex-flow: column wrap;
+}
+
+.popupup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5643;
+}
+
+.shortcut-container {
+  box-sizing: border-box;
+  text-align: center;
+  width: 95px;
+  margin: 1% 2px;
+}
+
+.selected-dsk-app,
+.shortcut-container:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.shortcut-container > img {
+  width: 50px;
+}
+
+.shortcut-container > p {
+  margin: 5px 0;
+  color: rgba(255, 255, 255, 0.89);
+}
+
+.desktop-leftclick-popup {
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 120px;
+  padding: 2px 5px;
+  height: 90px;
+}
+
+.desktop-leftclick-popup-content {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-items: center;
+  border-radius: 8px;
+  width: 120px;
+  height: 40px;
+}
+
+.desktop-leftclick-popup-content > img {
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  margin-right: 5px;
+  margin-left: 3px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.desktop-leftclick-popup-content:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(0 36 50);
+}
+
+.desktop-leftclick-popup-content:hover > img {
+  background-color: rgb(0 36 50);
+}

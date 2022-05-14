@@ -1,0 +1,43 @@
+.calculator-app-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: #dbdbdb;
+  overflow: hidden;
+}
+
+.calculator-screen {
+  width: 100%;
+  height: 70px;
+  background-color: #ebebeb;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.calculator-screen > p {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-right: 20px;
+}
+
+.calculator-buttons {
+  flex-wrap: wrap;
+  height: calc(100% - 70px);
+  background-color: inherit;
+}
+
+.calculator-buttons > button {
+  box-sizing: border-box;
+  width: calc(25% - 4px);
+  margin: 2px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border: none;
+}
+
+.operations {
+  background-color: #e9e9e9;
+}
+
+.calculator-nbrs {
+  background-color: #ebebeb;
+}
