@@ -8,13 +8,7 @@ import appReorganizer from './components/Tools/appReorganizer';
 function App() {
   const [feedResponse, setFeedResponse] = useState();
   useEffect(async () => {
-    const dateState = new Date();
-    const dateObj = dateState.toLocaleDateString('fr-FR').split('/');
-    const baseUrl = 'https://newsapi.org/v2/everything?'
-    + 'q=Microsoft&'
-    + `from=${dateObj[2]}-${dateObj[1]}-${dateObj[0]}&`
-    + 'sortBy=popularity&'
-    + 'apiKey=437d3b8f9c484293997c0c9027a39e23'; // lol
+    const baseUrl = 'https://gnews.io/api/v4/top-headlines?token=deff64bc4b4332b74c1f07b43deffce6&lang=en';
     const feedData = await axios.get(baseUrl);
     setFeedResponse(feedData.data.articles.slice(0, 6));
   }, []);
