@@ -30,7 +30,7 @@ export default function TaskMenu({
         {feedResponse ? feedResponse.map((feed, index) => (
           <div key={index} className="feed-container">
             <p className="feed-header">{feed.title.substring(0, 50)}</p>
-            <img src={feed.urlToImage} alt="feed-img" />
+            <img src={feed.image} alt="feed-img" />
           </div>
         )) : null}
       </section>
