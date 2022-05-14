@@ -1,0 +1,117 @@
+.fixed-task-menu {
+  position: fixed;
+  z-index: 1;
+  bottom: -98%;
+  left: 5px;
+  border-radius: 10px;
+  width: 45%;
+  height: 85%;
+  background-color: rgb(0 36 50);
+  display: flex;
+}
+
+.show-task {
+  transform: translateY(-125%);
+  transition: 0.25s;
+}
+
+.close-task {
+  transform: translateY(125%);
+  transition: 0.25s;
+}
+
+.taskbar-menu-setting {
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 8%;
+}
+
+.taskbar-menu-setting > img {
+  margin-bottom: 15px;
+  background: inherit;
+  cursor: pointer;
+}
+
+.taskbar-menu-apps {
+  height: 100%;
+  width: 38%;
+  border-left: 1px dotted rgba(255, 255, 255, 0.267);
+  border-right: 1px dotted rgba(255, 255, 255, 0.267);
+}
+
+.taskbar-menu-app {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(0 36 50);
+}
+
+.taskbar-menu-app:nth-child(1) {
+  margin-top: 4px;
+}
+
+.taskbar-menu-app > p {
+  margin: 0;
+}
+
+.taskbar-menu-app > img {
+  width: 20px;
+  margin: 0 5px;
+}
+
+.taskbar-menu-app:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0 36 50);
+}
+
+.taskbar-menu-feeds {
+  height: 100%;
+  width: 55%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center center;
+}
+
+.taskbar-menu-feeds > div {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.taskbar-menu-feeds > div:hover {
+  border: 2px solid rgb(214, 214, 214);
+}
+
+.taskbar-menu-feeds > div > p {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(39, 39, 39);
+  margin: auto;
+  background-color: white;
+  font-weight: bolder;
+}
+
+.taskbar-menu-feeds > div > img {
+  border-radius: 5px;
+  height: 90%;
+  width: 100%;
+}
+
+.taskbar-menu-setting > img:hover {
+  filter: contrast(40%);
+}

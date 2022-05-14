@@ -1,0 +1,51 @@
+.taskmgr-container {
+  height: 100%;
+}
+
+.taskmgr-app-container {
+  position: relative;
+  margin: 5px 0;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+}
+
+.taskmgr-app-container > img {
+  height: 40px;
+  margin: 0 10px;
+}
+
+.taskmgr-app-container.selected-task {
+  box-sizing: border-box;
+  background-color: #d0e5f8;
+  border: 1px solid #578eab;
+}
+
+.task-killer-section {
+  position: absolute;
+  bottom: 0;
+  height: 55px;
+  border-top: 1px solid rgb(190, 190, 190);
+  width: 100%;
+  background-color: rgb(224, 224, 224);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-killer-section > button {
+  margin: 0 15px;
+  height: 30px;
+  color: rgb(129, 129, 129);
+  border: 1px solid rgb(194, 194, 194);
+}
+
+.task-mgr-nodetails {
+  border: none !important;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.task-mgr-end.can-end {
+  color: rgb(19, 19, 19) !important;
+  border: 1px solid rgb(105, 105, 105) !important;
+}

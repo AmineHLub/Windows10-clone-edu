@@ -1,0 +1,61 @@
+/* edge */
+
+.tab-adress-section {
+  position: relative;
+  height: 40px;
+  width: 100%;
+}
+
+.browser-navigation {
+  height: inherit;
+  width: inherit;
+  align-items: center;
+  background-color: #efefef;
+}
+
+.browser-navigation > button,
+.browser-navigation > input {
+  border: none;
+  height: 35px;
+  width: 5%;
+  margin-left: 5px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.browser-navigation > button:hover {
+  background-color: #ddd;
+}
+
+.browser-navigation > input {
+  width: 90% !important;
+  margin-right: 5px;
+  border: 1px solid gray;
+  outline: none;
+  padding: 3px 5px 3px 40px;
+  background-image: url('../../assets/edge/search.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 18px 18px;
+}
+
+.tab-content-section {
+  width: 100%;
+  height: calc(100% - 40px);
+  padding: 0;
+  overflow: hidden;
+}
+
+.tab-content-section > iframe {
+  min-height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.edge-home-bg {
+  background-image: url('../../assets/edge/bg.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}

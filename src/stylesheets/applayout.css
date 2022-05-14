@@ -1,0 +1,69 @@
+.window-container-frame {
+  position: absolute;
+  min-width: 400px;
+  min-height: 500px;
+  height: 500px;
+  width: 700px;
+  background-color: white;
+  border: 1px solid gray;
+  resize: both;
+  overflow: auto;
+}
+
+.window-container-upper-control {
+  background-color: gray;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+}
+
+.window-container-upper-control-middle {
+  height: 100%;
+  width: 100%;
+}
+
+.window-container-upper-control-left {
+  width: 100px;
+  align-items: center;
+}
+
+.window-container-upper-control-left > img {
+  width: 23px;
+  height: 23px;
+  margin: 0 4px;
+}
+
+.window-container-upper-control-left > p {
+  font-size: 1.2rem;
+  margin: 0 5px;
+  color: white;
+}
+
+.window-container-upper-control-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.window-container-upper-control-right > img {
+  padding: 17px 15px;
+}
+
+.window-container-upper-control-right > img:hover {
+  filter: contrast(80%) brightness(80%);
+  background-color: white;
+}
+
+.window-container-upper-control-right > img:last-child:hover {
+  filter: brightness(150%);
+  background-color: rgba(199, 8, 8, 0.753);
+}
+
+.application-container {
+  margin-top: 45px;
+  height: calc(100% - 45px);
+}
